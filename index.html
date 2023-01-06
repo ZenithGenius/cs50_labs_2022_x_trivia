@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            let correct = document.querySelector('.correct');
+            correct.addEventListener('DOMContentLoaded', function(){
+                correct.style.backgroundColor = 'green';
+                document.querySelector('#feedback1').innerHTML = "Correct!";
+            });
+
+            let incorrects = document.querySelectorAll('.incorrect');
+            for(let i = 0 ; i < incorrects.length ; i++){
+                incorrects[i].addEventListener('click', function(){
+                    incorrects[i].style.backgroundColor = 'red';
+                });
+            }
+            document.querySelector(#check).addEventListener('click', function(){
+                let input = document.querySelector("input");
+                if (input.value === 'David'){
+                    input.style.backgroung = 'green';
+                    document.querySelector(#feedback2).innerHTML = 'Correct';
+                }
+                else{
+                    input.style.backgroung = 'red';
+                    document.querySelector(#feedback)innerHTML = 'Incorrect';                }
+            });
+        });
+            // TODO: Add code to check answers to questions
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3> What command is used in Kali Linux to delete a file without the terminal asking permission?</h3>
+                <h3 id = question_1>  </h3>
+                <button class = "incorrect">rm -filename-</button>
+                <button class = "correct">rm -f -filename-</button>
+                <button class = "incorrect">rm -r -filename-</button>
+
+                <p id = "feedback1"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is the first name of the instructor in this course (CS50 Introduction To Computer Science)?</h3>
+                <h3 id = question_2> </h3>
+                <input type ="text"></input>
+                <button id ="check">Check Answer</button>
+
+                <p id = "feedback2"></p>
+                <!-- TODO: Add free response question here -->
+            </div>
+        </div>
+    </body>
+</html>
